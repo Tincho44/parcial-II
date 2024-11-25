@@ -1,50 +1,69 @@
-# Welcome to your Expo app 👋
+# Parcial II
 
-This is an [Expo](https://expo.dev) project created with [`create-expo-app`](https://www.npmjs.com/package/create-expo-app).
+Aplicación React Native y Expo hecha por Martin Silva
 
-## Get started
+## Requisitos Previos
 
-1. Install dependencies
+Necesitarás tener instalado:
+- Node.js
+- npm o yarn
+- Expo Go en tu dispositivo móvil (opcional)
 
-   ```bash
-   npm install
-   ```
+## Instalación
 
-2. Start the app
-
-   ```bash
-    npx expo start
-   ```
-
-In the output, you'll find options to open the app in a
-
-- [development build](https://docs.expo.dev/develop/development-builds/introduction/)
-- [Android emulator](https://docs.expo.dev/workflow/android-studio-emulator/)
-- [iOS simulator](https://docs.expo.dev/workflow/ios-simulator/)
-- [Expo Go](https://expo.dev/go), a limited sandbox for trying out app development with Expo
-
-You can start developing by editing the files inside the **app** directory. This project uses [file-based routing](https://docs.expo.dev/router/introduction).
-
-## Get a fresh project
-
-When you're ready, run:
-
+1. Clona el repositorio:
 ```bash
-npm run reset-project
+git clone <url-del-repositorio>
+cd parcial-II
 ```
 
-This command will move the starter code to the **app-example** directory and create a blank **app** directory where you can start developing.
+2. Instala las dependencias:
+```bash
+npm install
+```
 
-## Learn more
+3. Instala las librerías necesarias:
+```bash
+npx expo install @react-navigation/native @react-navigation/native-stack react-native-screens react-native-safe-area-context react-native-paper
+```
 
-To learn more about developing your project with Expo, look at the following resources:
+## Librerías Utilizadas
 
-- [Expo documentation](https://docs.expo.dev/): Learn fundamentals, or go into advanced topics with our [guides](https://docs.expo.dev/guides).
-- [Learn Expo tutorial](https://docs.expo.dev/tutorial/introduction/): Follow a step-by-step tutorial where you'll create a project that runs on Android, iOS, and the web.
+El proyecto utiliza las siguientes librerías:
 
-## Join the community
+- **@react-navigation/native & @react-navigation/native-stack**: 
+  Para manejar la navegación entre pantallas de la aplicación
 
-Join our community of developers creating universal apps.
+- **react-native-screens & react-native-safe-area-context**: 
+  Requeridas por React Navigation para un funcionamiento correcto
 
-- [Expo on GitHub](https://github.com/expo/expo): View our open source platform and contribute.
-- [Discord community](https://chat.expo.dev): Chat with Expo users and ask questions.
+- **react-native-paper**: 
+  Proporciona componentes de UI prediseñados siguiendo Material Design
+
+## Cómo Ejecutar la Aplicación
+
+1. Inicia el servidor de desarrollo:
+```bash
+npx expo start
+```
+
+2. Opciones para ejecutar:
+   - Escanea el código QR con Expo Go en tu celular
+   - Presiona 'a' para abrir en emulador de Android
+   - Presiona 'i' para abrir en simulador de iOS (solo Mac)
+
+## Estructura del Proyecto
+
+```
+app/
+├── _layout.tsx             # Layout principal
+├── +not-found.tsx          # Pantalla 404
+├── (tabs)/                 # Grupo de tabs
+│   ├── _layout.tsx         # Configuración de tabs
+│   ├── index.tsx           # Lista de equipos
+└── team/                   # Rutas de equipos
+    ├── update/             # Grupo de actualización
+    │   └── [teamid].tsx    # Actualizar equipo específico
+    ├── [id].tsx            # Detalles del equipo
+    └── add.tsx             # Agregar equipo nuevo
+```
